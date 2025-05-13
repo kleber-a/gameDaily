@@ -14,7 +14,8 @@ interface PropsParams {
 
 export async function generateMetadata({params} : PropsParams): Promise<Metadata> {
   try {
-    const response: GameProps = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=game&id=${params.id}`, {next: {revalidate: 60}})
+    const { id } = await params;
+    const response: GameProps = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=game&id=${id}`, {next: {revalidate: 60}})
     
     .then((res) => res.json())
     .catch(() => {
@@ -78,8 +79,6 @@ export default async function Game({
     }) {
 
     const data = await getData(id)
-    
-
     const dailyGame = await getDailyGame();
 
   if (!data) {
