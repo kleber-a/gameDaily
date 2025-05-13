@@ -19,8 +19,9 @@
 <h2 id="layout">🎨 Layout</h2>
 
 <p align="center">
-    <img src=".github/example.png" alt="Exemplo de imagem do layout" width="400px">
-    <img src=".github/example.png" alt="Exemplo de imagem do layout" width="400px">
+    <img src="/public/home.png" alt="Page Home" width="400px">
+    <img src="/public/game.png" alt="Page Game" width="400px">
+    <img src="/public/perfil.png" alt="Page Perfil" width="400px">
 </p>
 
 ---
