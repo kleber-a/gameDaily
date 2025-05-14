@@ -3,7 +3,6 @@
 <p align="center">
  <a href="#tecnologias">Tecnologias</a> • 
  <a href="#comecando">Como começar</a> • 
- <a href="#contribuindo">Contribuindo</a>
 </p>
 
 <p align="center">
