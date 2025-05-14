@@ -7,14 +7,11 @@ import { BsArrowLeft } from "react-icons/bs";
 
 
 interface PropsParams {
-  params: {
-    id: string;
-  }
+  params: Promise<{ id: string }>;
 }
-
 export async function generateMetadata({params} : PropsParams): Promise<Metadata> {
   try {
-    const { id } = params;
+ const { id }: {id: string} = await params;
     const response: GameProps = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=game&id=${id}`, {next: {revalidate: 60}})
     
     .then((res) => res.json())
@@ -72,12 +69,8 @@ async function getDailyGame() {
     }
   }
 
-export default async function Game({ 
-    params : { id } 
-    }: {
-    params: { id: string } 
-    }) {
-
+export default async function Game({ params }: PropsParams) {
+    const { id }: {id: string} = await params;
     const data = await getData(id)
     const dailyGame = await getDailyGame();
 
@@ -107,7 +100,6 @@ export default async function Game({
 
         <div className="mt-16">
           <h2 className="text-2xl font-bold text-white mb-6">Jogos Recomendados</h2>
-          {/* <RecommendedGames games={recommendedGames} /> */}
           <RecommendedGames dailyGames={dailyGame} />
         </div>
       </div>

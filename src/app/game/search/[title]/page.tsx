@@ -13,13 +13,12 @@ async function getData(title: string) {
     }
 }
 
-export default async function Search(
-    {
-        params: { title }
-    }: {
-        params: { title: string }
-    }
-) {
+interface PropsParams {
+  params: Promise<{ title: string }>;
+}
+
+export default async function Search({ params }: PropsParams) {
+    const { title }: {title: string} = await params;
 
     const games = await getData(title);
 
