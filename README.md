@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-     <a href="#">📱 Acesse o projeto</a>
+     <a href="https://game-daily.vercel.app/">📱 Acesse o projeto</a>
 </p>
 
 ---
