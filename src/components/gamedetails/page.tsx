@@ -11,7 +11,7 @@ export default function GameDetails({ game }: GameDetailsProps) {
   return (
     <div className="bg-gray-800 rounded-xl overflow-hidden shadow-xl">
       <div className="relative h-64 md:h-96 w-full">
-        <Image src={game.image_url || "/placeholder.svg"} alt={game.title} fill className="object-cover" />
+        <Image id="test_id" src={game.image_url || "/placeholder.svg"} alt={game.title} fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
         <div className="absolute bottom-0 left-0 p-6">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">{game.title}</h1>

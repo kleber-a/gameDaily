@@ -49,7 +49,7 @@ export async function generateMetadata({params} : PropsParams): Promise<Metadata
 }
 
 
-async function getData(id: string) {
+export async function getData(id: string) {
     try {
       const res = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=game&id=${id}`, {next: {revalidate: 60}})
       return res.json();
@@ -59,7 +59,7 @@ async function getData(id: string) {
     }
 }
 
-async function getDailyGame() {
+export async function getDailyGame() {
     try {
       const res = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=game_day`, {cache: "no-store"})
       return res.json();
